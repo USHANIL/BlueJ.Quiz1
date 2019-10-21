@@ -5,7 +5,7 @@ public class StringUtilities {
      * @return `input`
      */
     public String returnInput(String input) {
-        return null;
+        return input;
     }
 
     /**
@@ -14,7 +14,8 @@ public class StringUtilities {
      * @return the concatenation of `baseValue` and `valueToBeAdded`
      */
     public String concatenate(String baseValue, String valueToBeAdded) {
-        return null;
+        String output = baseValue + valueToBeAdded;
+        return output;
     }
 
     /**
@@ -22,7 +23,14 @@ public class StringUtilities {
      * @return identical string with characters in opposite order
      */
     public String reverse(String valueToBeReversed) {
-        return null;
+        String output = "";
+        int strLength = valueToBeReversed.length();
+        for (int i = strLength-1; i>=0 ; i--)
+        {
+           output = output + valueToBeReversed.charAt(i); 
+        }
+        
+        return output;
     }
 
     /**
@@ -30,7 +38,12 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        
+        Character output;
+        int strMidLength = word.length()/2;
+        output = word.charAt(strMidLength);
+        
+        return output;
     }
 
     /**
@@ -39,7 +52,11 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        return null;
+        String output = value.replace(charToRemove.toString(), "");
+        //StringBuilder sb = new StringBuilder(value);
+        //sb.deleteCharAt(charToRemove);
+        //return sb.toString();
+        return output;
     }
 
     /**
@@ -47,6 +64,8 @@ public class StringUtilities {
      * @return last `word` in sentence
      */
     public String getLastWord(String sentence) {
-        return null;
+        String[] sentenceArray = sentence.split("\\s");
+        String lastword = sentenceArray[sentenceArray.length-1];
+        return lastword;
     }
 }
